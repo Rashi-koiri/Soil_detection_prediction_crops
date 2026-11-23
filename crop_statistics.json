@@ -1,0 +1,200 @@
+{
+  "rice": {
+    "avg_N": 79.9,
+    "avg_P": 47.6,
+    "avg_K": 39.9,
+    "avg_temp": 23.7,
+    "avg_humidity": 82.3,
+    "avg_ph": 6.43,
+    "avg_rainfall": 236.2
+  },
+  "maize": {
+    "avg_N": 77.8,
+    "avg_P": 48.4,
+    "avg_K": 19.8,
+    "avg_temp": 22.4,
+    "avg_humidity": 65.1,
+    "avg_ph": 6.25,
+    "avg_rainfall": 84.8
+  },
+  "chickpea": {
+    "avg_N": 40.1,
+    "avg_P": 67.8,
+    "avg_K": 79.9,
+    "avg_temp": 18.9,
+    "avg_humidity": 16.9,
+    "avg_ph": 7.34,
+    "avg_rainfall": 80.1
+  },
+  "kidneybeans": {
+    "avg_N": 20.8,
+    "avg_P": 67.5,
+    "avg_K": 20.1,
+    "avg_temp": 20.1,
+    "avg_humidity": 21.6,
+    "avg_ph": 5.75,
+    "avg_rainfall": 105.9
+  },
+  "pigeonpeas": {
+    "avg_N": 20.7,
+    "avg_P": 67.7,
+    "avg_K": 20.3,
+    "avg_temp": 27.7,
+    "avg_humidity": 48.1,
+    "avg_ph": 5.79,
+    "avg_rainfall": 149.5
+  },
+  "mothbeans": {
+    "avg_N": 21.4,
+    "avg_P": 48.0,
+    "avg_K": 20.2,
+    "avg_temp": 28.2,
+    "avg_humidity": 53.2,
+    "avg_ph": 6.83,
+    "avg_rainfall": 51.2
+  },
+  "mungbean": {
+    "avg_N": 21.0,
+    "avg_P": 47.3,
+    "avg_K": 19.9,
+    "avg_temp": 28.5,
+    "avg_humidity": 85.5,
+    "avg_ph": 6.72,
+    "avg_rainfall": 48.4
+  },
+  "blackgram": {
+    "avg_N": 40.0,
+    "avg_P": 67.5,
+    "avg_K": 19.2,
+    "avg_temp": 30.0,
+    "avg_humidity": 65.1,
+    "avg_ph": 7.13,
+    "avg_rainfall": 67.9
+  },
+  "lentil": {
+    "avg_N": 18.8,
+    "avg_P": 68.4,
+    "avg_K": 19.4,
+    "avg_temp": 24.5,
+    "avg_humidity": 64.8,
+    "avg_ph": 6.93,
+    "avg_rainfall": 45.7
+  },
+  "pomegranate": {
+    "avg_N": 18.9,
+    "avg_P": 18.8,
+    "avg_K": 40.2,
+    "avg_temp": 21.8,
+    "avg_humidity": 90.1,
+    "avg_ph": 6.43,
+    "avg_rainfall": 107.5
+  },
+  "banana": {
+    "avg_N": 100.2,
+    "avg_P": 82.0,
+    "avg_K": 50.0,
+    "avg_temp": 27.4,
+    "avg_humidity": 80.4,
+    "avg_ph": 5.98,
+    "avg_rainfall": 104.6
+  },
+  "mango": {
+    "avg_N": 20.1,
+    "avg_P": 27.2,
+    "avg_K": 29.9,
+    "avg_temp": 31.2,
+    "avg_humidity": 50.2,
+    "avg_ph": 5.77,
+    "avg_rainfall": 94.7
+  },
+  "grapes": {
+    "avg_N": 23.2,
+    "avg_P": 132.5,
+    "avg_K": 200.1,
+    "avg_temp": 23.8,
+    "avg_humidity": 81.9,
+    "avg_ph": 6.03,
+    "avg_rainfall": 69.6
+  },
+  "watermelon": {
+    "avg_N": 99.4,
+    "avg_P": 17.0,
+    "avg_K": 50.2,
+    "avg_temp": 25.6,
+    "avg_humidity": 85.2,
+    "avg_ph": 6.5,
+    "avg_rainfall": 50.8
+  },
+  "muskmelon": {
+    "avg_N": 100.3,
+    "avg_P": 17.7,
+    "avg_K": 50.1,
+    "avg_temp": 28.7,
+    "avg_humidity": 92.3,
+    "avg_ph": 6.36,
+    "avg_rainfall": 24.7
+  },
+  "apple": {
+    "avg_N": 20.8,
+    "avg_P": 134.2,
+    "avg_K": 199.9,
+    "avg_temp": 22.6,
+    "avg_humidity": 92.3,
+    "avg_ph": 5.93,
+    "avg_rainfall": 112.7
+  },
+  "orange": {
+    "avg_N": 19.6,
+    "avg_P": 16.6,
+    "avg_K": 10.0,
+    "avg_temp": 22.8,
+    "avg_humidity": 92.2,
+    "avg_ph": 7.02,
+    "avg_rainfall": 110.5
+  },
+  "papaya": {
+    "avg_N": 49.9,
+    "avg_P": 59.0,
+    "avg_K": 50.0,
+    "avg_temp": 33.7,
+    "avg_humidity": 92.4,
+    "avg_ph": 6.74,
+    "avg_rainfall": 142.6
+  },
+  "coconut": {
+    "avg_N": 22.0,
+    "avg_P": 16.9,
+    "avg_K": 30.6,
+    "avg_temp": 27.4,
+    "avg_humidity": 94.8,
+    "avg_ph": 5.98,
+    "avg_rainfall": 175.7
+  },
+  "cotton": {
+    "avg_N": 117.8,
+    "avg_P": 46.2,
+    "avg_K": 19.6,
+    "avg_temp": 24.0,
+    "avg_humidity": 79.8,
+    "avg_ph": 6.91,
+    "avg_rainfall": 80.4
+  },
+  "jute": {
+    "avg_N": 78.4,
+    "avg_P": 46.9,
+    "avg_K": 40.0,
+    "avg_temp": 25.0,
+    "avg_humidity": 79.6,
+    "avg_ph": 6.73,
+    "avg_rainfall": 174.8
+  },
+  "coffee": {
+    "avg_N": 101.2,
+    "avg_P": 28.7,
+    "avg_K": 29.9,
+    "avg_temp": 25.5,
+    "avg_humidity": 58.9,
+    "avg_ph": 6.79,
+    "avg_rainfall": 158.1
+  }
+}

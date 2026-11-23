@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TerraSoil™ Precision Agronomy & Crop Advisory System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="brand-wrapper">
+        <div class="brand-icon">🌱</div>
+        <div>
+          <h1 class="brand-title">TerraSoil™ Precision Agronomy</h1>
+          <p class="brand-subtitle">Soil Chemistry Diagnostics & Agro-Climatic Recommendation System</p>
+        </div>
+      </div>
+      <div class="system-status-badges">
+        <div class="status-badge">
+          <span class="status-dot"></span>
+          <span>Engine: <strong>Random Forest (100 Trees)</strong></span>
+        </div>
+        <div class="status-badge">
+          <span>Test Accuracy: <strong>99.55%</strong></span>
+        </div>
+        <div class="status-badge">
+          <span>Database: <strong>2,200 Field Records</strong></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Wrapper -->
+  <main class="main-wrapper">
+    
+    <!-- Presets Bar for Instant Realistic Soil Loading -->
+    <section class="preset-section">
+      <div class="preset-header">
+        <span>📍 Quick-Load Regional Field Presets:</span>
+      </div>
+      <div class="preset-buttons-container" id="presetButtons">
+        <!-- Injected via JavaScript -->
+      </div>
+    </section>
+
+    <!-- Main Workspace Grid -->
+    <div class="dashboard-grid">
+      
+      <!-- Left Column: Input Form (Soil & Weather Telemetry) -->
+      <section class="card">
+        <div class="card-title-bar">
+          <h2 class="card-title">🧪 Field Testing & Telemetry Inputs</h2>
+          <span class="card-tag">7 Calibrated Features</span>
+        </div>
+
+        <form id="agronomyForm">
+          
+          <!-- Category 1: Soil Chemical Properties -->
+          <div class="form-group-title">
+            <span>🌿 Primary Soil Macronutrients (NPK) & Reaction</span>
+          </div>
+
+          <div class="inputs-row">
+            <!-- Nitrogen -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputN" class="input-label">Nitrogen (N)</label>
+                <span class="input-unit">kg / ha</span>
+              </div>
+              <input type="number" id="inputN" name="N" class="text-input" min="0" max="150" step="1" value="90" required>
+              <input type="range" id="rangeN" min="0" max="150" step="1" value="90" class="range-input">
+            </div>
+
+            <!-- Phosphorus -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputP" class="input-label">Phosphorus (P)</label>
+                <span class="input-unit">kg / ha</span>
+              </div>
+              <input type="number" id="inputP" name="P" class="text-input" min="0" max="150" step="1" value="42" required>
+              <input type="range" id="rangeP" min="0" max="150" step="1" value="42" class="range-input">
+            </div>
+          </div>
+
+          <div class="inputs-row">
+            <!-- Potassium -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputK" class="input-label">Potassium (K)</label>
+                <span class="input-unit">kg / ha</span>
+              </div>
+              <input type="number" id="inputK" name="K" class="text-input" min="0" max="210" step="1" value="43" required>
+              <input type="range" id="rangeK" min="0" max="210" step="1" value="43" class="range-input">
+            </div>
+
+            <!-- Soil pH -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputPH" class="input-label">Soil Acidity (pH)</label>
+                <span class="input-unit" id="phTag">6.50 (Neutral)</span>
+              </div>
+              <input type="number" id="inputPH" name="ph" class="text-input" min="0.0" max="14.0" step="0.1" value="6.5" required>
+              <input type="range" id="rangePH" min="3.5" max="9.5" step="0.1" value="6.5" class="range-input">
+            </div>
+          </div>
+
+          <!-- Category 2: Agro-Climatic Parameters -->
+          <div class="form-group-title">
+            <span>🌦️ Agro-Climatic & Meteorological Conditions</span>
+          </div>
+
+          <div class="inputs-row">
+            <!-- Temperature -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputTemp" class="input-label">Ambient Temperature</label>
+                <span class="input-unit">°C</span>
+              </div>
+              <input type="number" id="inputTemp" name="temperature" class="text-input" min="-10" max="55" step="0.5" value="25.0" required>
+              <input type="range" id="rangeTemp" min="5" max="45" step="0.5" value="25.0" class="range-input">
+            </div>
+
+            <!-- Humidity -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputHumidity" class="input-label">Relative Humidity</label>
+                <span class="input-unit">%</span>
+              </div>
+              <input type="number" id="inputHumidity" name="humidity" class="text-input" min="10" max="100" step="1" value="82" required>
+              <input type="range" id="rangeHumidity" min="10" max="100" step="1" value="82" class="range-input">
+            </div>
+          </div>
+
+          <div class="inputs-row">
+            <!-- Rainfall -->
+            <div class="input-field-wrapper">
+              <div class="input-label-row">
+                <label for="inputRain" class="input-label">Precipitation / Rainfall</label>
+                <span class="input-unit">mm / season</span>
+              </div>
+              <input type="number" id="inputRain" name="rainfall" class="text-input" min="0" max="350" step="1" value="240" required>
+              <input type="range" id="rangeRain" min="20" max="320" step="1" value="240" class="range-input">
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="submitBtn">
+              <span>🌾 Run Soil Compatibility Evaluation</span>
+            </button>
+            <button type="button" class="btn-secondary" id="resetBtn">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Right Column: Agronomic Recommendation Output -->
+      <section class="results-container">
+        
+        <!-- Result Card Placeholder or Filled -->
+        <div class="card" id="outputCard">
+          <div class="card-title-bar">
+            <h2 class="card-title">📋 Agronomic Assessment & Crop Advisory</h2>
+            <button class="btn-secondary" id="printReportBtn" style="padding: 0.3rem 0.75rem; font-size: 0.8rem; display: none;" onclick="window.print()">🖨️ Print Report</button>
+          </div>
+
+          <div id="emptyPrompt" class="empty-state">
+            <div class="empty-state-icon">🌾</div>
+            <h3>Ready for Soil Evaluation</h3>
+            <p>Adjust soil chemical levels and climate readings on the left or select a preset to evaluate optimal crop suitability.</p>
+          </div>
+
+          <div id="resultsWrapper" style="display: none;">
+            
+            <!-- Hero Crop Recommendation -->
+            <div class="hero-recommendation-card">
+              <div class="hero-header">
+                <div>
+                  <div class="rec-category" id="resCategory">Cereal Grain / Kharif</div>
+                  <h3 class="rec-crop-name" id="resCropName">Paddy Rice</h3>
+                </div>
+                <div class="confidence-pill">
+                  <span>Match:</span>
+                  <span id="resConfidence">98.5%</span>
+                </div>
+              </div>
+
+              <!-- Agro-Parameters Summary -->
+              <div class="agro-meta-grid">
+                <div class="meta-item">
+                  <span class="meta-item-label">Recommended Season</span>
+                  <span class="meta-item-val" id="resSeason">Monsoon / Kharif</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-item-label">Growth Duration</span>
+                  <span class="meta-item-val" id="resDuration">105 - 150 Days</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-item-label">Water Requirement</span>
+                  <span class="meta-item-val" id="resWater">High (Standing water)</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-item-label">Soil Suitability</span>
+                  <span class="meta-item-val" id="resSoil">Clayey heavy loam</span>
+                </div>
+              </div>
+
+              <!-- Practical Advisory -->
+              <div class="advisory-box">
+                <div class="advisory-title">
+                  <span>💡 Agronomy & Nutrient Management Guidance</span>
+                </div>
+                <p id="resAdvisory">Balanced NPK required. Split nitrogen application between tillering and panicle initiation.</p>
+              </div>
+            </div>
+
+            <!-- Soil Chemical Diagnostic Health Check -->
+            <div style="margin-top: 1.25rem;">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem;">Soil Health Diagnostic Observations</h4>
+              <ul class="diagnostic-list" id="diagnosticList">
+                <!-- Dynamically populated -->
+              </ul>
+            </div>
+
+            <!-- Benchmark Comparison Table -->
+            <div style="margin-top: 1.25rem;">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem;">Field Reading vs Ideal Crop Benchmark</h4>
+              <table class="benchmark-table">
+                <thead>
+                  <tr>
+                    <th>Parameter</th>
+                    <th>Your Field</th>
+                    <th>Optimal Benchmark</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="benchmarkRows">
+                  <!-- Dynamically populated -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Secondary Viable Candidates -->
+            <div style="margin-top: 1.25rem;">
+              <h4 style="font-size: 0.9rem; font-weight: 700; color: #1e293b; margin-bottom: 0.5rem;">Alternative Crop Rotations / Candidates</h4>
+              <div class="alternatives-container" id="alternativesList">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Frontend Logic -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

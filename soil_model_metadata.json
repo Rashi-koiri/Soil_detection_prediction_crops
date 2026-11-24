@@ -1,0 +1,17 @@
+{
+  "architecture": "SoilCNN-4Block",
+  "classes": [
+    "Alluvial soil",
+    "Black Soil",
+    "Clay soil",
+    "Red soil"
+  ],
+  "input_size": [
+    128,
+    128,
+    3
+  ],
+  "test_accuracy": 82.69,
+  "total_unique_images": 672,
+  "best_val_accuracy": 93.0
+}
